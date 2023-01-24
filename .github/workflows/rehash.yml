@@ -1,0 +1,15 @@
+name: Rehash
+
+on: push
+
+jobs:
+  rehash:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Benching performance
+        run: Deconfuser.exe --benchmark-average
+      - name: Draw -> hash code
+        run: Deconfuser.exe f5ctqAmdNsZ889UjM4LxDm8WGxA Draw
+      - name: Initialize -> hash code
+        run: Deconfuser.exe oD87G7SXjsTukw7IVWxVlVFEgvA Initialize
